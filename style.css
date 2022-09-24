@@ -1,0 +1,72 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: #ebe6e6;
+    display: grid;
+    place-items: center;
+}
+
+.grid {
+    display: grid;
+    position: relative;
+}
+
+.cell {
+    border: 1px solid rgba(0, 174, 187, 0.315);
+}
+
+.start {
+    background-image: url(imgs/start.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+.end {
+    background-image: url(imgs/finish.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.visited {
+    position: relative;
+}
+
+.start::before {
+    display: none;
+}
+
+.visited {
+    background-color: #008686;
+    animation: pop 500ms ease;
+}
+
+.path {
+    background-color: #ffff00;
+    animation: pop 500ms ease;   
+}
+
+.wall {
+    background-color: #012427;
+    animation: pop2 500ms ease;
+}
+
+
+@keyframes pop {
+    0% {
+        scale: .5;
+        border-radius: 50%;
+    }
+}
+
+@keyframes pop2 {
+    0% {
+        scale: 0;
+    }
+}
